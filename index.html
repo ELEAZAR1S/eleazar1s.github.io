@@ -387,6 +387,92 @@ footer { border-top: 1px solid var(--border); padding: 40px 2.5rem; max-width: 1
   .hero{padding:64px 1.2rem 48px;}
   .eco-box,.pred-box{padding:52px 24px;}
 }
+
+/* ── ECONOMIA / TOMA DE DECISIONES ── */
+.eco-kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:32px;}
+.eco-kpi{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);padding:20px 18px;border-top:3px solid var(--mint);}
+.eco-kpi-best{border-top-color:var(--moss);background:var(--mint-lt);}
+.eco-kpi-l{font-family:'DM Mono',monospace;font-size:8.5px;text-transform:uppercase;letter-spacing:.13em;color:var(--text3);margin-bottom:8px;}
+.eco-kpi-v{font-size:22px;font-weight:700;color:var(--forest);line-height:1;font-family:'Playfair Display',serif;}
+.eco-kpi-v span{font-size:10px;font-weight:400;color:var(--text3);font-family:'DM Mono',monospace;}
+.eco-kpi-n{font-family:'DM Mono',monospace;font-size:10px;color:var(--sage);margin-top:5px;}
+.eco-2col{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
+@media(max-width:860px){.eco-2col{grid-template-columns:1fr;}}
+.eco-box-card{background:var(--card);border:1px solid var(--border);border-radius:var(--rx);overflow:hidden;margin-bottom:0;}
+.eco-card-head{padding:16px 22px;border-bottom:1px solid var(--border);background:var(--card2);display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.eco-card-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--forest);}
+.eco-badge{font-family:'DM Mono',monospace;font-size:9px;padding:4px 9px;border-radius:4px;background:var(--cream2);color:var(--text3);text-transform:uppercase;letter-spacing:.07em;border:1px solid var(--border);flex-shrink:0;}
+.eco-badge-green{background:var(--mint);color:var(--forest);border-color:var(--sage-lt);}
+.eco-card-body{padding:20px 22px;}
+.eco-desc{font-size:13px;color:var(--text2);line-height:1.75;margin-bottom:16px;}
+.eco-table{width:100%;border-collapse:collapse;font-size:12px;}
+.eco-table th{font-family:'DM Mono',monospace;font-size:8.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);padding:8px 10px;text-align:left;font-weight:500;border-bottom:1px solid var(--border);}
+.eco-table td{padding:9px 10px;border-bottom:1px solid var(--border);color:var(--text2);}
+.eco-table tr:last-child td{border-bottom:none;}
+.eco-table tr:hover td{background:var(--cream);}
+.eco-table .hi{color:var(--moss);font-weight:600;}
+.eff-badge{font-family:'DM Mono',monospace;font-size:9px;padding:3px 8px;border-radius:3px;text-transform:uppercase;font-weight:600;}
+.eff-badge.best{background:var(--mint);color:var(--forest);}
+.eff-badge.low{background:var(--terra-lt);color:var(--terra);}
+.eco-oport-grid{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
+/* Correlation matrix */
+.corr-grid{display:flex;flex-direction:column;gap:3px;margin-top:12px;}
+.corr-labels-top{display:grid;grid-template-columns:80px repeat(4,1fr);gap:3px;margin-bottom:2px;}
+.corr-labels-top span{font-family:'DM Mono',monospace;font-size:8.5px;color:var(--text3);text-align:center;padding:2px;line-height:1.3;}
+.corr-row{display:grid;grid-template-columns:80px repeat(4,1fr);gap:3px;align-items:center;}
+.corr-row-lbl{font-family:'DM Mono',monospace;font-size:8.5px;color:var(--text3);text-align:right;padding-right:6px;line-height:1.3;}
+.corr-cell{border-radius:5px;padding:10px 4px;text-align:center;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;color:white;background:rgba(var(--c),calc(var(--v)*0.85 + 0.1));}
+/* Clusters / ahorro */
+.ahorro-hero{background:linear-gradient(135deg,var(--forest),var(--moss));border-radius:14px;padding:28px;text-align:center;}
+.ahorro-label{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.65);margin-bottom:8px;}
+.ahorro-val{font-family:'Playfair Display',serif;font-size:38px;font-weight:900;color:#fff;line-height:1;}
+.ahorro-val span{font-size:14px;font-weight:400;font-family:'DM Mono',monospace;color:rgba(255,255,255,.7);display:block;margin-top:4px;}
+.ahorro-sub{font-family:'DM Mono',monospace;font-size:10.5px;color:rgba(255,255,255,.6);margin-top:10px;line-height:1.6;}
+.rec-row-title{font-family:'DM Mono',monospace;font-size:9.5px;text-transform:uppercase;letter-spacing:.14em;color:var(--text3);margin-bottom:10px;}
+.rec-list{display:flex;flex-direction:column;gap:8px;}
+.rec-item{display:flex;gap:12px;align-items:flex-start;}
+.rec-num{font-family:'DM Mono',monospace;font-size:10px;font-weight:600;color:var(--moss);background:var(--mint);border-radius:5px;padding:2px 7px;flex-shrink:0;margin-top:2px;}
+.rec-item div{font-size:12px;color:var(--text2);line-height:1.6;}
+.rec-item strong{color:var(--forest);}
+.rec-box{display:flex;gap:10px;align-items:flex-start;background:var(--cream);border-radius:8px;padding:10px 12px;}
+.rec-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:5px;}
+.rec-txt{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* ── TOMA DE DECISIONES — block headers ── */
+.td-block-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:28px;padding:18px 22px;background:var(--card);border:1px solid var(--border);border-radius:var(--rl);border-left:4px solid var(--moss);}
+.td-block-num{width:36px;height:36px;border-radius:10px;background:var(--forest);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:18px;font-weight:900;flex-shrink:0;}
+.td-block-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--forest);margin-bottom:3px;}
+.td-block-sub{font-family:'DM Mono',monospace;font-size:10px;color:var(--text3);letter-spacing:.06em;}
+
+/* ── EIP INTRO BLOCK ── */
+.eip-intro{display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;margin-bottom:52px;align-items:start;}
+@media(max-width:900px){.eip-intro{grid-template-columns:1fr;}}
+.eip-label{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--moss);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.eip-label::before{content:'';width:20px;height:2px;background:var(--sage-lt);border-radius:1px;}
+.eip-title{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,32px);font-weight:800;color:var(--forest);line-height:1.2;margin-bottom:20px;}
+.eip-body{font-size:14px;color:var(--text2);line-height:1.85;margin-bottom:14px;}
+.eip-body strong{color:var(--forest);font-weight:600;}
+.eip-pillars{display:flex;gap:16px;margin-top:24px;flex-wrap:wrap;}
+.eip-pillar{display:flex;align-items:flex-start;gap:10px;background:var(--mint-lt);border:1px solid var(--mint);border-radius:10px;padding:12px 14px;flex:1;min-width:120px;}
+.eip-pillar-icon{font-size:18px;flex-shrink:0;}
+.eip-pillar div{font-size:12px;color:var(--text2);line-height:1.55;}
+.eip-pillar strong{display:block;color:var(--forest);font-size:13px;margin-bottom:2px;}
+.eip-intro-right{display:flex;flex-direction:column;gap:12px;}
+.eip-stat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);padding:20px;border-left:4px solid var(--sage-lt);}
+.eip-stat-card.green{border-left-color:var(--moss);background:var(--mint-lt);}
+.eip-stat-num{font-family:'Playfair Display',serif;font-size:30px;font-weight:900;color:var(--forest);line-height:1;margin-bottom:5px;}
+.eip-stat-lbl{font-size:12px;color:var(--text2);line-height:1.55;}
+.eip-flow{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);padding:18px;}
+.eip-flow-step{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--forest);font-weight:600;padding:6px 0;}
+.eip-flow-step span{font-size:16px;}
+.eip-flow-arrow{font-family:'DM Mono',monospace;font-size:14px;color:var(--sage);padding-left:8px;line-height:1;}
+/* Companies header */
+.eip-companies-header{margin-bottom:20px;}
+.eip-companies-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--forest);margin-bottom:6px;}
+.eip-companies-sub{font-size:13.5px;color:var(--text2);line-height:1.7;}
+/* Company card "why" blurb */
+.co-why{font-size:11.5px;color:var(--text2);line-height:1.6;margin-top:8px;padding-top:8px;border-top:1px solid var(--border);}
+.co-why strong{color:var(--forest);font-weight:600;}
 </style>
 </head>
 <body>
@@ -399,9 +485,7 @@ footer { border-top: 1px solid var(--border); padding: 40px 2.5rem; max-width: 1
   </a>
   <ul class="nav-links">
     <li><a href="#informacion" class="act">Información</a></li>
-    <li><a href="#economia">Economía</a></li>
-    <li><a href="#predicciones">Predicciones</a></li>
-    <li><a href="#mercado">Oferta &amp; Demanda</a></li>
+    <li><a href="#toma-decisiones">Toma de Decisiones</a></li>
     <li><a href="#ml">Machine Learning</a></li>
   </ul>
 </nav>
@@ -433,6 +517,41 @@ footer { border-top: 1px solid var(--border); padding: 40px 2.5rem; max-width: 1
   <h2 class="sec-h">Empresas del Cluster</h2>
   <p class="sec-p">Datos operativos, estructura de variables y métricas clave de las cuatro empresas ancla. Haz clic en cada tarjeta para ver el detalle completo del dataset.</p>
 
+  <!-- ── QUÉ ES EIP ── -->
+  <div class="eip-intro">
+    <div class="eip-intro-left">
+      <div class="eip-label">¿Qué es Eco Industrial Park?</div>
+      <h3 class="eip-title">Un ecosistema industrial<br>donde los residuos de unos<br>son los recursos de otros.</h3>
+      <p class="eip-body">El <strong>Eco Industrial Park Cartagena</strong> es un cluster industrial que reúne a las principales empresas de la Zona de Mamonal con un propósito claro: <strong>convertir la gestión de residuos industriales en una ventaja competitiva colectiva.</strong></p>
+      <p class="eip-body">Su modelo opera en tres ejes. Primero, <strong>conecta</strong> a las empresas para que comercien directamente sus corrientes residuales — los desechos de una refinería se convierten en materia prima de una cementera; los lodos portuarios de un terminal alimentan el co-procesamiento de otra industria. Segundo, <strong>analiza</strong> los datos de generación, precios de mercado y elasticidades para identificar qué residuo vale más, dónde hay ineficiencia y cuánto dinero se puede recuperar. Tercero, <strong>predice</strong>: usando modelos de machine learning y series de tiempo, el cluster anticipa la generación futura de residuos por empresa y tipo, y proyecta cómo cambiarán los precios de los materiales secundarios — permitiendo negociar contratos con gestores con meses de anticipación.</p>
+      <div class="eip-pillars">
+        <div class="eip-pillar"><div class="eip-pillar-icon">🔗</div><div><strong>Conectar</strong><br>Comercio directo de residuos entre empresas del cluster</div></div>
+        <div class="eip-pillar"><div class="eip-pillar-icon">📊</div><div><strong>Analizar</strong><br>Datos reales de 6,416 registros, 2020–2025</div></div>
+        <div class="eip-pillar"><div class="eip-pillar-icon">🔮</div><div><strong>Predecir</strong><br>Forecast de generación y precios con ML</div></div>
+      </div>
+    </div>
+    <div class="eip-intro-right">
+      <div class="eip-stat-card"><div class="eip-stat-num">$85,612 M</div><div class="eip-stat-lbl">COP de ahorro potencial reduciendo solo un 15% de residuos críticos</div></div>
+      <div class="eip-stat-card green"><div class="eip-stat-num">2.11 M</div><div class="eip-stat-lbl">toneladas de residuos trazadas y analizadas en el cluster</div></div>
+      <div class="eip-stat-card"><div class="eip-stat-num">91%</div><div class="eip-stat-lbl">de reciclabilidad promedio — la mayoría ya es un recurso, no un desecho</div></div>
+      <div class="eip-flow">
+        <div class="eip-flow-step"><span>⚡</span> Afinia genera chatarra y aceites</div>
+        <div class="eip-flow-arrow">↓</div>
+        <div class="eip-flow-step"><span>🏗</span> Argos los co-procesa en su horno</div>
+        <div class="eip-flow-arrow">↓</div>
+        <div class="eip-flow-step"><span>🛢</span> REFICAR vende azufre a la agricultura</div>
+        <div class="eip-flow-arrow">↓</div>
+        <div class="eip-flow-step"><span>⚓</span> Contecar gestiona MARPOL del mar</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── EMPRESAS DEL CLUSTER ── -->
+  <div class="eip-companies-header">
+    <div class="eip-companies-title">Las 4 Empresas Ancla del Cluster</div>
+    <div class="eip-companies-sub">Cada empresa aporta un flujo de residuos único. Juntas forman el ecosistema de simbiosis industrial. Haz clic para ver el dataset completo.</div>
+  </div>
+
   <div class="co-grid">
 
     <!-- AFINIA -->
@@ -443,6 +562,7 @@ footer { border-top: 1px solid var(--border); padding: 40px 2.5rem; max-width: 1
         <div class="co-info">
           <div class="co-name">Afinia &amp; Caribemar</div>
           <div class="co-sub">Sector Eléctrico · Caribe Colombiano</div>
+          <div class="co-why">Genera cables de cobre y aluminio, transformadores y aceites dieléctricos de alto valor. <strong>Rol en el cluster: proveedor de metales preciosos y líquidos re-refinables</strong> hacia gestores y la industria siderúrgica.</div>
         </div>
         <div class="chevron">▾</div>
       </div>
@@ -483,6 +603,7 @@ footer { border-top: 1px solid var(--border); padding: 40px 2.5rem; max-width: 1
         <div class="co-info">
           <div class="co-name">Cementos Argos</div>
           <div class="co-sub">Sector Cementero · Zona Franca Mamonal</div>
+          <div class="co-why">Su horno cementero opera a más de 1,400 °C — puede co-procesar lodos, aceites y CDR de otras empresas como combustible sustituto. <strong>Rol en el cluster: nodo receptor y valorizador de residuos energéticos de todo el parque.</strong></div>
         </div>
         <div class="chevron">▾</div>
       </div>
@@ -523,6 +644,7 @@ footer { border-top: 1px solid var(--border); padding: 40px 2.5rem; max-width: 1
         <div class="co-info">
           <div class="co-name">SPRC &amp; Contecar</div>
           <div class="co-sub">Sector Portuario · Terminal Manga &amp; Mamonal</div>
+          <div class="co-why">Los puertos tienen obligación legal (MARPOL 73/78) de recibir residuos oleosos, aguas de sentina y basuras de buques. <strong>Rol en el cluster: puerta de entrada marítima y conector entre el tráfico global de buques y la red de gestores locales.</strong></div>
         </div>
         <div class="chevron">▾</div>
       </div>
@@ -563,6 +685,7 @@ footer { border-top: 1px solid var(--border); padding: 40px 2.5rem; max-width: 1
         <div class="co-info">
           <div class="co-name">Ecopetrol — REFICAR</div>
           <div class="co-sub">Refinación &amp; Petroquímica · Mamonal</div>
+          <div class="co-why">Genera 325,000 ton/año de azufre sólido (fertilizante) y corrientes de alto valor como catalizadores FCC y chatarra metálica. <strong>Rol en el cluster: nodo ancla dominante en volumen — su azufre financia económicamente la viabilidad del ecosistema.</strong></div>
         </div>
         <div class="chevron">▾</div>
       </div>
@@ -597,50 +720,199 @@ footer { border-top: 1px solid var(--border); padding: 40px 2.5rem; max-width: 1
 </section>
 
 <!-- ═══ ECONOMÍA ═══ -->
-<section id="economia">
-  <div class="sec-tag">02 — Economía</div>
-  <h2 class="sec-h">Módulo Económico del Cluster</h2>
-  <p class="sec-p">Análisis de costos de disposición, ingresos por valorización, ahorro por simbiosis industrial y retorno económico de la inversión en economía circular.</p>
-  <div class="eco-box">
-    <div class="eco-icon-wrap">💹</div>
-    <div class="eco-h">Análisis Económico del Cluster</div>
-    <p class="eco-p">Los modelos de valorización económica, costos de gestión RESPEL, flujos de ingreso por venta de materiales secundarios y proyecciones de retorno de inversión están disponibles en el módulo dedicado.</p>
-    <a href="#" class="btn" onclick="alert('Redirigiendo al módulo económico...'); return false;">
-      Acceder al Módulo Económico
-      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-    </a>
-  </div>
-</section>
+<section id="toma-decisiones">
+  <div class="sec-tag">02 — Toma de Decisiones Basadas en los Datos</div>
+  <h2 class="sec-h">Toma de Decisiones<br>Basadas en los Datos</h2>
+  <p class="sec-p">Módulo integrado de análisis económico y mercado de residuos del Eco Industrial Park Mamonal. KPIs operativos, benchmark entre empresas, oportunidades de valorización, elasticidades, escenarios de ahorro y precios de referencia de materiales secundarios — todo en un solo panel de decisión.</p>
 
-<!-- ═══ PREDICCIONES ═══ -->
-<section id="predicciones">
-  <div class="sec-tag">03 — Predicciones</div>
-  <h2 class="sec-h">Visualizaciones de Futuro</h2>
-  <p class="sec-p">Modelos predictivos de generación de residuos, análisis de series de tiempo y proyecciones de economía circular para el período 2025–2030.</p>
-  <div class="pred-box">
-    <div class="pred-grid"></div>
-    <div class="pred-inner">
-      <div class="pred-lbl">🔬 En desarrollo</div>
-      <div class="pred-h">Inteligencia Predictiva</div>
-      <p class="pred-p">Los modelos STL, SARIMA y Prophet para predicción de corrientes residuales y simulación de simbiosis industrial están siendo entrenados con los datos 2020–2025.</p>
-      <div class="prog-wrap">
-        <div class="prog-meta"><span>Entrenamiento del modelo</span><span>38% completado</span></div>
-        <div class="prog-track"><div class="prog-fill"></div></div>
+  <!-- ── BLOQUE 1: ANÁLISIS ECONÓMICO ── -->
+  <div class="td-block-header">
+    <span class="td-block-num">A</span>
+    <div>
+      <div class="td-block-title">Análisis Económico del Cluster</div>
+      <div class="td-block-sub">KPIs · Benchmark · Oportunidades · Elasticidades · Correlaciones · Escenario de ahorro</div>
+    </div>
+  </div>
+
+
+  <!-- KPIs -->
+  <div class="eco-kpi-row">
+    <div class="eco-kpi"><div class="eco-kpi-l">Toneladas Totales</div><div class="eco-kpi-v">740,141<span> ton</span></div><div class="eco-kpi-n">3 empresas · 2021–2025</div></div>
+    <div class="eco-kpi"><div class="eco-kpi-l">Costo Total Cluster</div><div class="eco-kpi-v">$570.7<span> MCOP</span></div><div class="eco-kpi-n">Valor económico acumulado</div></div>
+    <div class="eco-kpi"><div class="eco-kpi-l">Costo Promedio / Ton</div><div class="eco-kpi-v">$638,866<span> COP</span></div><div class="eco-kpi-n">Promedio ponderado cluster</div></div>
+    <div class="eco-kpi eco-kpi-best"><div class="eco-kpi-l">Ahorro Potencial (−15%)</div><div class="eco-kpi-v">$85,612<span> MCOP</span></div><div class="eco-kpi-n">Reduciendo residuos críticos</div></div>
+    <div class="eco-kpi"><div class="eco-kpi-l">Tipos de Residuo</div><div class="eco-kpi-v">57<span> tipos</span></div><div class="eco-kpi-n">Clasificados y trazados</div></div>
+  </div>
+
+  <!-- Benchmark + Costo mensual -->
+  <div class="eco-2col">
+    <div class="eco-box-card">
+      <div class="eco-card-head"><span class="eco-card-title">Benchmark por Empresa</span><span class="eco-badge">Eficiencia comparada</span></div>
+      <div class="eco-card-body">
+        <p class="eco-desc">Comparativa de las tres empresas ancla en toneladas, valor COP e índice de eficiencia (ton/$). Afinia y Contecar lideran en eficiencia; Argos domina en volumen por ser el nodo cementero del cluster.</p>
+        <table class="eco-table">
+          <thead><tr><th>Empresa</th><th>Ton totales</th><th>Valor COP</th><th>COP / ton</th><th>Eficiencia</th></tr></thead>
+          <tbody>
+            <tr><td><strong style="color:var(--moss)">Afinia</strong></td><td class="mono">324.6</td><td class="mono">$211.7 M</td><td class="mono">$578,403</td><td><span class="eff-badge best">★ Mayor</span></td></tr>
+            <tr><td><strong style="color:var(--sand)">Argos</strong></td><td class="mono">703,297.7</td><td class="mono">$549,010 M</td><td class="mono">$794,512</td><td><span class="eff-badge low">Menor</span></td></tr>
+            <tr><td><strong style="color:var(--terra)">Contecar</strong></td><td class="mono">36,519.0</td><td class="mono">$21,530 M</td><td class="mono">$597,325</td><td><span class="eff-badge best">★ Mayor</span></td></tr>
+          </tbody>
+        </table>
+        <div class="rec-box" style="margin-top:16px;">
+          <div class="rec-dot" style="background:var(--terra)"></div>
+          <div class="rec-txt"><strong>Empresa menos eficiente: Argos</strong> — Mayor COP/ton. Oportunidad de mejora replicando estrategias de Afinia (gestión de activos eléctricos de alto valor unitario).</div>
+        </div>
       </div>
-      <div class="pred-chips">
-        <span class="pchip">Series de tiempo STL</span><span class="pchip">Clustering K-Means</span>
-        <span class="pchip">Simbiosis Industrial</span><span class="pchip">Diagrama Sankey MFA</span>
-        <span class="pchip">Modelo de precios</span><span class="pchip">Forecast 2025–2030</span>
+    </div>
+    <div class="eco-box-card">
+      <div class="eco-card-head"><span class="eco-card-title">Costo Total por Mes (COP)</span><span class="eco-badge">Estacionalidad 12 meses</span></div>
+      <div class="eco-card-body">
+        <p class="eco-desc">Evolución mensual del costo total del cluster. Pico en septiembre (~$56.4 MCOP), mínimo en enero (~$43.5 MCOP). Los meses de Q1 y Q4 muestran menor actividad, coherente con ciclos de mantenimiento industrial.</p>
+        <div style="height:200px;position:relative;"><canvas id="costoMensualChart"></canvas></div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- ═══ OFERTA & DEMANDA ═══ -->
-<section id="mercado">
-  <div class="sec-tag">04 — Oferta &amp; Demanda</div>
-  <h2 class="sec-h">Mercado de Residuos Industriales</h2>
-  <p class="sec-p">Precios de referencia de los materiales secundarios y corrientes residuales gestionadas en el cluster, con indicadores de tendencia de mercado actualizados al Q2 2025.</p>
+  <!-- Oportunidades -->
+  <div class="eco-box-card" style="margin-bottom:20px;">
+    <div class="eco-card-head"><span class="eco-card-title">Oportunidades de Valorización por Categoría</span><span class="eco-badge">Top 8 categorías — Toneladas &amp; Valor</span></div>
+    <div class="eco-card-body">
+      <p class="eco-desc">Las categorías de mayor potencial económico del cluster. <strong>Subproducto industrial</strong> lidera con 344,427 ton y valor promedio de $781,187 COP/ton, seguido de <strong>CDR</strong> con el mayor valor unitario ($801,485 COP/ton) — confirma el co-procesamiento cementero como palanca principal de economía circular.</p>
+      <div class="eco-oport-grid">
+        <div style="height:260px;position:relative;flex:1;min-width:280px;"><canvas id="oportunidadesChart"></canvas></div>
+        <div style="flex:1;min-width:240px;overflow-x:auto;">
+          <table class="eco-table">
+            <thead><tr><th>Categoría</th><th>Ton</th><th>$/ton COP</th></tr></thead>
+            <tbody>
+              <tr><td>Subproducto industrial</td><td class="mono">344,427</td><td class="mono hi">$781,187</td></tr>
+              <tr><td>Subprod. / MP alternativa</td><td class="mono">181,401</td><td class="mono">$757,972</td></tr>
+              <tr><td>CDR</td><td class="mono">112,131</td><td class="mono hi">$801,486</td></tr>
+              <tr><td>Combustible Alternativo</td><td class="mono">18,117</td><td class="mono hi">$829,024</td></tr>
+              <tr><td>Subprod. cementero</td><td class="mono">19,206</td><td class="mono hi">$790,243</td></tr>
+              <tr><td>Biomasa / Comb. Alt.</td><td class="mono">13,870</td><td class="mono hi">$809,189</td></tr>
+              <tr><td>RCD</td><td class="mono">24,727</td><td class="mono">$644,665</td></tr>
+              <tr><td>Metales</td><td class="mono">5,917</td><td class="mono">$693,828</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Elasticidades + Correlación -->
+  <div class="eco-2col">
+    <div class="eco-box-card">
+      <div class="eco-card-head"><span class="eco-card-title">Elasticidades — Sensibilidad al precio</span><span class="eco-badge">Top 10 residuos</span></div>
+      <div class="eco-card-body">
+        <p class="eco-desc">La elasticidad mide cómo varía la cantidad generada ante cambios en el precio. Valores negativos indican que al aumentar el costo, la generación se reduce. El <strong>aceite dieléctrico (−0.258)</strong> es el residuo más elástico — mayor oportunidad de gestión activa.</p>
+        <table class="eco-table">
+          <thead><tr><th>Residuo</th><th>Elasticidad</th><th>R²</th></tr></thead>
+          <tbody>
+            <tr><td>Aceite dieléctrico mineral</td><td class="mono" style="color:var(--terra)">−0.258</td><td class="mono">0.017</td></tr>
+            <tr><td>RCD</td><td class="mono" style="color:var(--terra)">−0.122</td><td class="mono">0.007</td></tr>
+            <tr><td>Aguas sucias buques (Anx IV)</td><td class="mono" style="color:var(--terra)">−0.073</td><td class="mono">0.005</td></tr>
+            <tr><td>Chatarra ferrosa</td><td class="mono" style="color:var(--terra)">−0.051</td><td class="mono">0.001</td></tr>
+            <tr><td>Residuos de poda técnica</td><td class="mono" style="color:var(--terra)">−0.032</td><td class="mono">0.001</td></tr>
+            <tr><td>Aguas sentina oleosas</td><td class="mono" style="color:var(--terra)">−0.032</td><td class="mono">0.001</td></tr>
+            <tr><td>Lodos fuel oil (MARPOL I)</td><td class="mono" style="color:var(--moss)">+0.029</td><td class="mono">0.002</td></tr>
+            <tr><td>Basuras buques (plásticos)</td><td class="mono" style="color:var(--moss)">+0.042</td><td class="mono">0.004</td></tr>
+            <tr><td>Chatarra acero galvanizado</td><td class="mono" style="color:var(--moss)">+0.013</td><td class="mono">0.000</td></tr>
+            <tr><td>Chatarra metálica</td><td class="mono" style="color:var(--terra)">−0.008</td><td class="mono">0.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="eco-box-card">
+      <div class="eco-card-head"><span class="eco-card-title">Correlación de Variables Económicas</span><span class="eco-badge">Matriz 4×4</span></div>
+      <div class="eco-card-body">
+        <p class="eco-desc">La cantidad generada y el valor COP tienen correlación muy alta (0.96), confirmando que el volumen es el principal driver económico. El costo/ton y la eficiencia tienen correlación negativa significativa (−0.52): residuos más costosos tienden a gestionarse con menor eficiencia.</p>
+        <div class="corr-grid">
+          <div class="corr-labels-top">
+            <span></span><span>Cant. ton</span><span>Valor COP</span><span>COP/ton</span><span>Eficiencia</span>
+          </div>
+          <div class="corr-row"><span class="corr-row-lbl">Cant. ton</span>
+            <div class="corr-cell" style="--v:1.0;--c:190,50,50">1.00</div>
+            <div class="corr-cell" style="--v:0.96;--c:190,50,50">0.96</div>
+            <div class="corr-cell" style="--v:0.12;--c:180,180,210">0.12</div>
+            <div class="corr-cell" style="--v:0.078;--c:100,120,180">−0.08</div>
+          </div>
+          <div class="corr-row"><span class="corr-row-lbl">Valor COP</span>
+            <div class="corr-cell" style="--v:0.96;--c:190,50,50">0.96</div>
+            <div class="corr-cell" style="--v:1.0;--c:190,50,50">1.00</div>
+            <div class="corr-cell" style="--v:0.17;--c:180,180,210">0.17</div>
+            <div class="corr-cell" style="--v:0.085;--c:100,120,180">−0.09</div>
+          </div>
+          <div class="corr-row"><span class="corr-row-lbl">COP / ton</span>
+            <div class="corr-cell" style="--v:0.12;--c:180,180,210">0.12</div>
+            <div class="corr-cell" style="--v:0.17;--c:180,180,210">0.17</div>
+            <div class="corr-cell" style="--v:1.0;--c:190,50,50">1.00</div>
+            <div class="corr-cell" style="--v:0.52;--c:50,80,180">−0.52</div>
+          </div>
+          <div class="corr-row"><span class="corr-row-lbl">Eficiencia</span>
+            <div class="corr-cell" style="--v:0.078;--c:100,120,180">−0.08</div>
+            <div class="corr-cell" style="--v:0.085;--c:100,120,180">−0.09</div>
+            <div class="corr-cell" style="--v:0.52;--c:50,80,180">−0.52</div>
+            <div class="corr-cell" style="--v:1.0;--c:190,50,50">1.00</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:12px;font-family:'DM Mono',monospace;font-size:9.5px;color:var(--text3);">
+          <div style="width:60px;height:8px;border-radius:4px;background:linear-gradient(90deg,#4260b4,#f5f0e6,#be3232);"></div>
+          <span>−1.0 &nbsp;·&nbsp; Correlación &nbsp;·&nbsp; +1.0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Clusters + Escenario -->
+  <div class="eco-2col">
+    <div class="eco-box-card">
+      <div class="eco-card-head"><span class="eco-card-title">Clusters Económicos (PCA 2D)</span><span class="eco-badge">K-Means sobre datos reales</span></div>
+      <div class="eco-card-body">
+        <p class="eco-desc">K-Means con PCA identifica 2 clusters económicos diferenciados. <strong>Cluster 0 (azul)</strong>: residuos de alto valor unitario, dispersos — típicamente RESPEL y subproductos especiales. <strong>Cluster 1 (naranja)</strong>: residuos de gran volumen y costo estable — CDR, subproductos industriales, MARPOL.</p>
+        <div style="height:220px;position:relative;"><canvas id="clustersChart"></canvas></div>
+        <div style="display:flex;gap:12px;margin-top:12px;">
+          <div class="rec-box" style="flex:1;margin:0;"><div class="rec-dot" style="background:#4472C4"></div><div class="rec-txt"><strong>Cluster 0:</strong> Alto valor unitario. Gestión especializada, contratos individuales por corriente.</div></div>
+          <div class="rec-box" style="flex:1;margin:0;"><div class="rec-dot" style="background:#E67E22"></div><div class="rec-txt"><strong>Cluster 1:</strong> Alto volumen. Contratos marco anuales, logística optimizada por escala.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="eco-box-card">
+      <div class="eco-card-head"><span class="eco-card-title">Escenario de Ahorro · Toma de Decisión</span><span class="eco-badge eco-badge-green">Reducción 15% residuos críticos</span></div>
+      <div class="eco-card-body">
+        <div class="ahorro-hero">
+          <div class="ahorro-label">Ahorro estimado</div>
+          <div class="ahorro-val">$85,612 M<span>COP</span></div>
+          <div class="ahorro-sub">Reduciendo 15% de los residuos de mayor costo por tonelada</div>
+        </div>
+        <div style="margin-top:20px;">
+          <div class="rec-row-title">Recomendaciones del Análisis</div>
+          <div class="rec-list">
+            <div class="rec-item"><span class="rec-num">01</span><div><strong>Priorizar residuos de mayor costo</strong> — Aceite dieléctrico (elasticidad −0.258) y RESPEL de Argos ($794K COP/ton) tienen mayor impacto en reducción de costos.</div></div>
+            <div class="rec-item"><span class="rec-num">02</span><div><strong>Replicar estrategias de Afinia y Contecar</strong> — Su eficiencia operativa (2× mayor que Argos) puede trasladarse a la gestión de CDR y subproductos cementeros.</div></div>
+            <div class="rec-item"><span class="rec-num">03</span><div><strong>Implementar economía circular</strong> — Las 6 categorías CDR + subproductos suman 694,280 ton con valor promedio de $793K COP/ton; redirigir disposición final a valorización.</div></div>
+            <div class="rec-item"><span class="rec-num">04</span><div><strong>Reducir residuos críticos elásticos</strong> — RCD (−0.122) y aguas de buques (−0.073) responden activamente a incentivos de precio.</div></div>
+            <div class="rec-item"><span class="rec-num">05</span><div><strong>Automatizar monitoreo con dashboards</strong> — El pico de costo en septiembre ($56.4 MCOP) sugiere que la estacionalidad no está siendo anticipada en contratos con gestores.</div></div>
+            <div class="rec-item"><span class="rec-num">06</span><div><strong>Optimizar categorías de alta elasticidad</strong> — Implementar precios diferenciados según sensibilidad por corriente y empresa.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- ── BLOQUE 2: MERCADO DE RESIDUOS ── -->
+  <div class="td-block-header" style="margin-top:48px;">
+    <span class="td-block-num">B</span>
+    <div>
+      <div class="td-block-title">Mercado de Residuos Industriales</div>
+      <div class="td-block-sub">Precios de referencia · Tendencias Q2 2025 · Volúmenes disponibles por empresa</div>
+    </div>
+  </div>
+  <p style="font-size:14px;color:var(--text2);line-height:1.8;max-width:640px;margin-bottom:28px;">Precios de referencia de los materiales secundarios y corrientes residuales del cluster, con indicadores de tendencia actualizados al Q2 2025. Las señales de precio complementan las elasticidades del bloque A para priorizar contratos con gestores.</p>
+
 
   <div class="market-row">
     <div class="mbox">
@@ -701,6 +973,7 @@ footer { border-top: 1px solid var(--border); padding: 40px 2.5rem; max-width: 1
     <div class="vc"><div class="vc-co">REFICAR / Ecopetrol</div><div class="vc-r">Lodos aceitosos</div><div class="vc-q">~4,150 <span style="font-size:12px">ton/año</span></div><div class="vc-p">Co-combustible cementeras · Argos ZF</div></div>
     <div class="vc am"><div class="vc-co">Afinia / Caribemar</div><div class="vc-r">Transformadores cobre</div><div class="vc-q">~46 <span style="font-size:12px">ton/año</span></div><div class="vc-p">Ref: $7,500+ USD/ton Cu · Alto valor</div></div>
   </div>
+
 </section>
 
 <!-- ═══ MACHINE LEARNING ═══ -->
@@ -886,7 +1159,7 @@ footer { border-top: 1px solid var(--border); padding: 40px 2.5rem; max-width: 1
 function toggle(card) { card.classList.toggle('open'); }
 
 // Nav active on scroll
-const secs = ['informacion','economia','predicciones','mercado','ml'];
+const secs = ['informacion','toma-decisiones','ml'];
 const links = document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll', () => {
   let cur = '';
@@ -1043,6 +1316,79 @@ new Chart(document.getElementById('scatterChart'), {
     }
   }
 });
+
+// ── ECONOMIA CHARTS ──
+
+// 1. Costo mensual (line)
+new Chart(document.getElementById('costoMensualChart'), {
+  type: 'line',
+  data: {
+    labels: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+    datasets: [{
+      label: 'Costo COP',
+      data: [43500,53800,55900,47300,49000,49400,49200,51900,56400,50400,45600,43800],
+      borderColor: '#2E7D4F', borderWidth: 2.5, pointRadius: 4,
+      pointBackgroundColor: '#2E7D4F', tension: 0.35,
+      fill: true, backgroundColor: 'rgba(46,125,79,0.07)'
+    }]
+  },
+  options: { ...CD, interaction:{ mode:'index', intersect:false },
+    plugins: { ...CD.plugins, tooltip: { ...CD.plugins.tooltip,
+      callbacks: { label: ctx => ' $' + (ctx.parsed.y/1000).toFixed(1) + ' MCOP' }
+    }},
+    scales: {
+      x: scaleStyle,
+      y: { ...scaleStyle, ticks: { ...scaleStyle.ticks,
+        callback: v => '$' + (v/1000).toFixed(0) + 'M'
+      }}
+    }
+  }
+});
+
+// 2. Oportunidades horizontal bar
+new Chart(document.getElementById('oportunidadesChart'), {
+  type: 'bar',
+  data: {
+    labels: ['MARPOL Anx I','Metales','Biomasa/CA','Comb. Alt.','RCD','CDR','Subprod. MP Alt.','Subprod. Industrial'],
+    datasets: [{
+      label: 'Toneladas',
+      data: [6403, 5917, 13870, 18117, 24727, 112131, 181401, 344427],
+      backgroundColor: ['#A8CBB2','#A8CBB2','#8BAF8D','#8BAF8D','#6B9B72','#5A9970','#3A7D4C','#2E7D4F'],
+      borderRadius: 4, borderSkipped: false
+    }]
+  },
+  options: { ...CD, indexAxis: 'y',
+    plugins: { ...CD.plugins, tooltip: { ...CD.plugins.tooltip,
+      callbacks: { label: ctx => ' ' + ctx.parsed.x.toLocaleString('es-CO') + ' ton' }
+    }},
+    scales: {
+      x: { ...scaleStyle, ticks: { ...scaleStyle.ticks, callback: v => (v/1000).toFixed(0) + 'k' }},
+      y: { ...scaleStyle, ticks: { ...scaleStyle.ticks, font: { family:'DM Mono', size:9 }}}
+    }
+  }
+});
+
+// 3. Clusters scatter (PCA 2D — representative points from real output)
+function mkCluster(n, cx, cy, sx, sy) {
+  const pts = [];
+  for(let i=0;i<n;i++) pts.push({x:+(cx+(Math.random()-.5)*sx*2).toFixed(2), y:+(cy+(Math.random()-.5)*sy*2).toFixed(2)});
+  return pts;
+}
+new Chart(document.getElementById('clustersChart'), {
+  type: 'scatter',
+  data: { datasets: [
+    { label:'Cluster 0 — Alto valor unit.', data: mkCluster(120, 3.5, -0.6, 1.8, 1.2), backgroundColor:'rgba(68,114,196,.6)', pointRadius:4 },
+    { label:'Cluster 1 — Alto volumen', data: mkCluster(280, 0.2, 0.1, 1.4, 1.3), backgroundColor:'rgba(230,126,34,.55)', pointRadius:3.5 }
+  ]},
+  options: { ...CD,
+    plugins: { ...CD.plugins, legend: { display:true, labels:{ color:'#3D5942', font:{ family:'DM Mono', size:9 }, boxWidth:8 }}},
+    scales: {
+      x: { ...scaleStyle, title:{ display:true, text:'PCA 1', color:'#7A9A80', font:{ family:'DM Mono', size:9 }}},
+      y: { ...scaleStyle, title:{ display:true, text:'PCA 2', color:'#7A9A80', font:{ family:'DM Mono', size:9 }}}
+    }
+  }
+});
+
 </script>
 </body>
 </html>
