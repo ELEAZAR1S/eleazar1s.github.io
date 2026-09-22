@@ -1,1 +1,0 @@
-# ELEAZAR1S.github.io
