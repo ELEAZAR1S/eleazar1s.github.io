@@ -58,6 +58,16 @@
   --rx:        24px;
 }
 
+<!-- ═══ HERO BANNER INICIAL CON IMAGEN ═══ -->
+<div class="hero-banner" id="heroBanner">
+  <div class="hero-banner-bg" id="heroBg"></div>
+  <div class="hero-banner-overlay"></div>
+  <div class="hero-banner-content">
+    <h1>Eco Industrial Park</h1>
+    <p class="mono" style="color: var(--sand-lt); margin-top: 10px;">Cartagena de Indias</p>
+  </div>
+</div>
+
 html { scroll-behavior: smooth; }
 body {
   background: var(--cream);
@@ -1279,6 +1289,22 @@ const pc=v=>+(v*100).toFixed(1);
 new Chart(document.getElementById('mnMod'),{type:'bar',data:{labels:EN,datasets:[{label:'Gradient Boosting · estratificada',data:EN.map(e=>pc(R.B[e].gc)),backgroundColor:'#2E7D4F'},{label:'Gradient Boosting · corrientes no vistas',data:EN.map(e=>pc(R.B[e].gg)),backgroundColor:'#B5834A'},{label:'K-means (k=5)',data:EN.map(e=>pc(R.B[e].km)),backgroundColor:'#A8CBB2'}].map(d=>({...d,borderRadius:3}))},
   options:{...CD,plugins:{...CD.plugins,legend:leg,tooltip:{...CD.plugins.tooltip,callbacks:{label:c=>' '+c.dataset.label+': '+c.parsed.y+'%'}}},scales:{x:scaleStyle,y:{...ax('Exactitud del nivel (%)'),min:0,max:100}}}});
 })();
+</script>
+  <!-- ═══ SCRIPT DE DIFUMINADO AL HACER SCROLL ═══ -->
+<script>
+  window.addEventListener('scroll', function() {
+    const heroBg = document.getElementById('heroBg');
+    const heroBanner = document.getElementById('heroBanner');
+    const bannerHeight = heroBanner.offsetHeight;
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition <= bannerHeight) {
+      let opacity = 1 - (scrollPosition / bannerHeight);
+      heroBg.style.opacity = opacity;
+    } else {
+      heroBg.style.opacity = 0;
+    }
+  });
 </script>
 </body>
 </html>
