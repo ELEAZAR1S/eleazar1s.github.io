@@ -9,25 +9,21 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 
 :root{
-  --cream:       #F4F9F9;
-  --white:       #FFFFFF;
   --forest:      #052E23;
   --moss:        #0E5243;
   --turquoise:   #00796B;
   
-  /* Transparencia extrema para las tarjetas (Glassmorphism sutil) */
-  --glass-bg:    rgba(255, 255, 255, 0.22);
-  --glass-border:rgba(255, 255, 255, 0.45);
-  --glass-shadow:0 16px 40px rgba(0, 0, 0, 0.25);
+  /* Tarjeta más transparente y amplia */
+  --glass-bg:    rgba(255, 255, 255, 0.15);
+  --glass-border:rgba(255, 255, 255, 0.35);
+  --glass-shadow:0 20px 50px rgba(0, 0, 0, 0.3);
 
   --text:        #0F1E19;
   --text2:       #1D332B;
   --text3:       #3A5248;
-  --border:      rgba(255, 255, 255, 0.4);
   
-  --r:           12px;
-  --rl:          16px;
   --rx:          24px;
+  --rl:          16px;
 }
 
 html { scroll-behavior: smooth; }
@@ -40,15 +36,14 @@ body {
   overflow-x: hidden;
 }
 
-/* ── 1. ENCABEZADO TOTALMENTE TRANSPARENTE ── */
+/* ── NAVEGACIÓN TRANSPARENTE CON NUEVO LOGO ── */
 nav {
   position: fixed; 
   top: 0; 
   left: 0;
   width: 100%;
   z-index: 100;
-  background: transparent !important; /* Totalmente transparente sin fondo */
-  border-bottom: none;
+  background: transparent !important;
   display: flex; 
   align-items: center; 
   justify-content: space-between;
@@ -56,19 +51,18 @@ nav {
   height: 70px;
 }
 .nav-brand {
-  display: flex; align-items: center; gap: 10px;
+  display: flex; align-items: center; gap: 12px;
   text-decoration: none;
   font-weight: 800;
   color: #FFFFFF;
   font-size: 16px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
-.nav-leaf {
-  width: 32px; height: 32px; border-radius: 8px;
-  background: rgba(0, 168, 150, 0.85); display: flex; align-items: center; justify-content: center;
-  font-size: 15px; color: #fff;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-  backdrop-filter: blur(8px);
+.nav-logo-img {
+  width: 36px; height: 36px; border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.8);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
 }
 .nav-links { display: flex; gap: 10px; list-style: none; }
 .nav-links a {
@@ -83,17 +77,15 @@ nav {
 }
 .nav-links a:hover {
   background: rgba(255, 255, 255, 0.35);
-  color: #FFFFFF;
 }
 
-/* ── 2. IMAGEN CUBRIENDO TODA LA PANTALLA (SIN FRANGAS AZULES) ── */
+/* ── IMAGEN DE FONDO COMPLETA (100VW / 100VH) ── */
 .hero-banner-bg {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  /* Cover garantiza que llene toda la pantalla recortando lo necesario */
   background: url('Panorama del puerto sostenible de Cartagena.png') center center / cover no-repeat;
   z-index: 1;
   will-change: opacity;
@@ -106,12 +98,12 @@ nav {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.1) 60%, rgba(244, 249, 249, 1) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 60%, rgba(244, 249, 249, 1) 100%);
   z-index: 1;
   pointer-events: none;
 }
 
-/* ── 3. TARJETA MUCHO MÁS TRANSPARENTE CON DESENFOQUE Y SOMBRA ── */
+/* ── TARJETA FLOTANTE MÁS ANCHA Y TRANSPARENTE ── */
 .hero-wrapper {
   position: relative;
   z-index: 2;
@@ -120,58 +112,61 @@ nav {
   align-items: center;
   justify-content: flex-end;
   padding: 90px 2.5rem 40px;
-  max-width: 1350px;
+  max-width: 1450px;
   margin: 0 auto;
 }
 
 .hero-glass-card {
   width: 100%;
-  max-width: 520px;
+  max-width: 680px; /* Tarjeta más ancha */
   background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
   border-radius: var(--rx);
-  padding: 32px;
+  padding: 36px;
   box-shadow: var(--glass-shadow);
 }
 
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em;
-  color: var(--forest); text-transform: uppercase;
+  color: #fff; text-transform: uppercase;
   padding: 5px 14px; border-radius: 20px;
-  background: rgba(255, 255, 255, 0.55); 
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(0, 121, 107, 0.65); 
+  border: 1px solid rgba(255, 255, 255, 0.4);
   margin-bottom: 14px;
   font-weight: 800;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 h1.hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(28px, 2.8vw, 38px);
+  font-size: clamp(30px, 3vw, 42px);
   font-weight: 900;
-  color: var(--forest);
+  color: #FFFFFF;
   line-height: 1.18;
-  margin-bottom: 10px;
-  text-shadow: 0 1px 2px rgba(255,255,255,0.6);
+  margin-bottom: 12px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
 }
-h1.hero-title em { font-style: italic; color: #005F53; }
+h1.hero-title em { font-style: italic; color: #48C9B0; }
 
 .hero-desc {
-  font-size: 13.5px; color: var(--text2);
-  line-height: 1.6; margin-bottom: 22px;
+  font-size: 14px; color: rgba(255,255,255,0.9);
+  line-height: 1.6; margin-bottom: 24px;
   font-weight: 500;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
 }
 
 .sec-subtitle {
   font-family: 'DM Mono', monospace;
-  font-size: 10.5px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--forest);
-  margin-bottom: 12px;
+  color: #FFFFFF;
+  margin-bottom: 14px;
   font-weight: 800;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
 }
 
 .company-summary-grid {
@@ -181,17 +176,17 @@ h1.hero-title em { font-style: italic; color: #005F53; }
 }
 
 .co-box-mini {
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: var(--rl);
-  padding: 14px 16px;
-  border-left: 4px solid var(--turquoise);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 16px 18px;
+  border-left: 4px solid #48C9B0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
-.co-box-mini.spc { border-left-color: var(--moss); }
-.co-box-mini.rfc { border-left-color: var(--forest); }
+.co-box-mini.spc { border-left-color: #00A896; }
+.co-box-mini.rfc { border-left-color: #117A65; }
 
 .co-mini-header {
   display: flex;
@@ -202,54 +197,57 @@ h1.hero-title em { font-style: italic; color: #005F53; }
 
 .co-mini-name {
   font-family: 'Playfair Display', serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 800;
-  color: var(--forest);
+  color: #FFFFFF;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
 }
 
 .co-mini-tag {
   font-family: 'DM Mono', monospace;
   font-size: 9px;
-  padding: 2px 7px;
+  padding: 2px 8px;
   border-radius: 4px;
-  background: rgba(255, 255, 255, 0.7);
-  color: var(--moss);
+  background: rgba(0, 0, 0, 0.3);
+  color: #FFFFFF;
   font-weight: 800;
+  border: 1px solid rgba(255,255,255,0.3);
 }
 
 .co-mini-role {
-  font-size: 12px;
-  color: var(--text2);
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.88);
   line-height: 1.45;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
 }
 
 .co-mini-stats {
   display: flex;
   gap: 16px;
   font-family: 'DM Mono', monospace;
-  font-size: 10.5px;
-  color: var(--text3);
-  border-top: 1px dashed rgba(0, 0, 0, 0.15);
-  padding-top: 6px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.8);
+  border-top: 1px dashed rgba(255, 255, 255, 0.3);
+  padding-top: 8px;
 }
 
 .co-mini-stats strong {
-  color: var(--forest);
+  color: #FFFFFF;
   font-weight: 700;
 }
 
 footer { 
   position: relative;
   z-index: 2;
-  border-top: 1px solid rgba(0,0,0,0.08); 
+  border-top: 1px solid rgba(255,255,255,0.15); 
   padding: 24px 2.5rem; 
-  background: var(--cream);
+  background: #052E23;
+  color: rgba(255,255,255,0.7);
   text-align: center;
   font-family: 'DM Mono', monospace; 
   font-size: 11px; 
-  color: var(--text3);
 }
 
 @media(max-width: 768px) {
@@ -261,10 +259,10 @@ footer {
 </head>
 <body>
 
-<!-- ═══ 1. NAVEGACIÓN TOTALMENTE TRANSPARENTE ═══ -->
+<!-- ═══ 1. NAVEGACIÓN CON NUEVO LOGO ═══ -->
 <nav>
   <a class="nav-brand" href="#">
-    <span class="nav-leaf">🌱</span>
+    <img src="Gecko trepador con sombrero vueltiao.png" alt="Logo Gecko" class="nav-logo-img">
     <span>Eco Industrial Park</span>
   </a>
   <ul class="nav-links">
@@ -273,11 +271,11 @@ footer {
   </ul>
 </nav>
 
-<!-- ═══ 2. FONDO COMPLETO DE PANTALLA CUBRIENDO 100% ═══ -->
+<!-- ═══ 2. FONDO COMPLETO DE PANTALLA ═══ -->
 <div class="hero-banner-bg" id="heroBg"></div>
 <div class="hero-overlay" id="heroOverlay"></div>
 
-<!-- ═══ 3. TARJETA FLOTANTE DE ALTA TRANSPARENCIA ═══ -->
+<!-- ═══ 3. TARJETA FLOTANTE MÁS ANCHA Y TRANSPARENTE ═══ -->
 <div class="hero-wrapper" id="empresas">
   <div class="hero-glass-card">
     <span class="hero-badge">Simbiosis Industrial</span>
