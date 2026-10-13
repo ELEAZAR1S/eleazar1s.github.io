@@ -86,15 +86,15 @@ nav {
   background: rgba(255, 255, 255, 0.35);
 }
 
-/* ── HERO BANNER: EMPEZANDO DESDE LA IZQUIERDA ── */
+/* ── HERO BANNER: POSICIONADO DESDE EL FINAL DE LA MACETA ── */
 .hero-banner-bg {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  /* Posicionado exactamente desde la izquierda hacia la derecha */
-  background: url('Panorama del puerto sostenible de Cartagena.png') left center / cover no-repeat;
+  /* Desplazamiento horizontal para alinear justo al final de la maceta */
+  background: url('Panorama del puerto sostenible de Cartagena.png') -260px center / cover no-repeat;
   z-index: 1;
   will-change: opacity;
   transition: opacity 0.1s linear;
@@ -358,7 +358,7 @@ footer {
   </ul>
 </nav>
 
-<!-- ═══ FONDO DE PANTALLA INICIAL (DESDE LA IZQUIERDA) ═══ -->
+<!-- ═══ FONDO DE PANTALLA INICIAL (DESDE EL FINAL DE LA MACETA) ═══ -->
 <div class="hero-banner-bg" id="heroBg"></div>
 <div class="hero-overlay" id="heroOverlay"></div>
 
