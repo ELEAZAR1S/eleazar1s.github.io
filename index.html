@@ -234,7 +234,7 @@ h1.hero-title em { font-style: italic; color: #48C9B0; }
 }
 .co-mini-stats strong { color: #FFFFFF; }
 
-/* ── SECCIONES AL BAJAR ── */
+/* ── CONTENIDO PRINCIPAL AL BAJAR (CONTENEDOR UNIFICADO) ── */
 .scroll-section {
   position: relative;
   z-index: 2;
@@ -254,17 +254,76 @@ h1.hero-title em { font-style: italic; color: #48C9B0; }
 }
 
 .sec-intro-text {
-  font-size: 15px;
+  font-size: 15.5px;
   color: var(--text2);
   line-height: 1.8;
-  max-width: 820px;
+  max-width: 860px;
   margin-bottom: 40px;
 }
 
-/* Tarjetas de Métricas Clave de Impacto */
+/* Grilla de los 4 Pilares */
+.unified-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.unified-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--rl);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 16px rgba(5, 46, 35, 0.05);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.unified-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(5, 46, 35, 0.1);
+}
+
+.uc-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.uc-icon { font-size: 26px; }
+
+.uc-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--forest);
+}
+
+.uc-desc {
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.uc-highlight-box {
+  background: var(--mint);
+  border: 1px solid var(--sage-lt);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 12px;
+  color: var(--forest);
+  font-weight: 600;
+  line-height: 1.5;
+}
+.uc-highlight-box strong { color: var(--moss); }
+
+/* Tarjetas de Métricas de Impacto */
 .impact-metrics-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   margin-bottom: 60px;
 }
@@ -294,13 +353,12 @@ h1.hero-title em { font-style: italic; color: #48C9B0; }
   font-weight: 500;
 }
 
-/* Fichas detalladas de Empresas Ancla */
+/* Fichas de las 3 Empresas Ancla */
 .anchors-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 24px;
-  margin-top: 30px;
-  margin-bottom: 60px;
+  margin-top: 24px;
 }
 
 .anchor-card {
@@ -312,6 +370,12 @@ h1.hero-title em { font-style: italic; color: #48C9B0; }
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.anchor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(5, 46, 35, 0.12);
 }
 
 .anchor-header {
@@ -388,67 +452,6 @@ h1.hero-title em { font-style: italic; color: #48C9B0; }
   color: var(--forest);
 }
 
-/* Grilla de los 4 Pilares */
-.unified-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
-}
-
-.unified-card {
-  background: #FFFFFF;
-  border: 1px solid var(--border);
-  border-radius: var(--rl);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 4px 16px rgba(5, 46, 35, 0.05);
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-.unified-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(5, 46, 35, 0.1);
-}
-
-.uc-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-}
-
-.uc-icon {
-  font-size: 26px;
-}
-
-.uc-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 19px;
-  font-weight: 800;
-  color: var(--forest);
-}
-
-.uc-desc {
-  font-size: 13px;
-  color: var(--text2);
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.uc-highlight-box {
-  background: var(--mint);
-  border: 1px solid var(--sage-lt);
-  border-radius: 10px;
-  padding: 12px 14px;
-  font-size: 12px;
-  color: var(--forest);
-  font-weight: 600;
-  line-height: 1.5;
-}
-.uc-highlight-box strong { color: var(--moss); }
-
 footer { 
   position: relative;
   z-index: 2;
@@ -478,9 +481,8 @@ footer {
     <span>Eco Industrial Park</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#impacto">Impacto</a></li>
-    <li><a href="#empresas-detalladas">Empresas</a></li>
     <li><a href="#ejes">Estrategia</a></li>
+    <li><a href="#empresas-ancla">Empresas</a></li>
   </ul>
 </nav>
 
@@ -488,7 +490,7 @@ footer {
 <div class="hero-banner-bg" id="heroBg"></div>
 <div class="hero-overlay" id="heroOverlay"></div>
 
-<!-- ═══ HERO SLIDE ═══ -->
+<!-- ═══ HERO SLIDE INICIAL ═══ -->
 <div class="hero-wrapper" id="inicio">
   <div class="hero-glass-card">
     <span class="hero-badge">Simbiosis Industrial</span>
@@ -548,151 +550,14 @@ footer {
   </div>
 </div>
 
-<!-- ═══ SECCIÓN AL BAJAR: MÉTRICAS DE IMPACTO Y EMPRESAS ANCLA ═══ -->
-<section class="scroll-section" id="impacto">
-  <h2 class="sec-title-main">Impacto del Cluster Industrial</h2>
-  
-  <!-- Métricas Clave -->
-  <div class="impact-metrics-grid">
-    <div class="impact-card">
-      <div class="impact-number">$85,581 M</div>
-      <div class="impact-desc">COP de ahorro potencial reduciendo solo un 15% de residuos críticos.</div>
-    </div>
-    <div class="impact-card" style="border-left-color: var(--moss);">
-      <div class="impact-number">2.11 M</div>
-      <div class="impact-desc">toneladas de residuos trazadas y analizadas en el cluster.</div>
-    </div>
-    <div class="impact-card" style="border-left-color: var(--forest);">
-      <div class="impact-number">91%</div>
-      <div class="impact-desc">de reciclabilidad promedio — la mayoría ya es un recurso, no un desecho.</div>
-    </div>
-  </div>
-
-  <div id="empresas-detalladas"></div>
-  <h2 class="sec-title-main" style="margin-top: 40px;">Las 3 Empresas Ancla del Cluster</h2>
+<!-- ═══ 1. PRIMERA SECCIÓN AL BAJAR: ¿QUÉ ES ECO INDUSTRIAL PARK? Y SUS 4 PILARES ═══ -->
+<section class="scroll-section" id="ejes">
+  <h2 class="sec-title-main">¿Qué es Eco Industrial Park?</h2>
   <p class="sec-intro-text">
-    Tres empresas, tres tipos de residuos. Lo que una no puede usar, otra lo aprovecha. Haz clic en cada tarjeta para ver su base de datos completa.
-  </p>
-
-  <!-- Fichas Detalladas de las 3 Empresas -->
-  <div class="anchors-grid">
-    
-    <!-- 1. Cementos Argos -->
-    <div class="anchor-card">
-      <div>
-        <div class="anchor-header">
-          <div>
-            <div class="anchor-company-name">Cementos Argos</div>
-            <div class="anchor-sector">Sector cementero · Zona Franca Mamonal</div>
-          </div>
-          <span class="anchor-badge-tag">ARG</span>
-        </div>
-        <div class="anchor-body">
-          Su horno cementero opera a más de 1.400 °C, una temperatura que permite usar residuos como combustible en lugar de carbón o petcoke. Además recibe escoria y arcillas que sustituyen parte del clínker del cemento.<br><br>
-          <strong>Su papel:</strong> recibe residuos de otras empresas y los convierte en energía y en materia prima.
-        </div>
-      </div>
-      <div class="anchor-stats-grid">
-        <div class="astat-box">
-          <span class="astat-lbl">Registros</span>
-          <span class="astat-val">1,104 reg</span>
-        </div>
-        <div class="astat-box">
-          <span class="astat-lbl">Período</span>
-          <span class="astat-val">2022–2025</span>
-        </div>
-        <div class="astat-box">
-          <span class="astat-lbl">Residuos Totales</span>
-          <span class="astat-val">703 k/ton</span>
-        </div>
-        <div class="astat-box">
-          <span class="astat-lbl">CO₂ Evitado</span>
-          <span class="astat-val">1,044 ton</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 2. SPRC y Contecar -->
-    <div class="anchor-card">
-      <div>
-        <div class="anchor-header">
-          <div>
-            <div class="anchor-company-name">SPRC y Contecar</div>
-            <div class="anchor-sector">Sector portuario · Terminal Manga y Mamonal</div>
-          </div>
-          <span class="anchor-badge-tag">SPC</span>
-        </div>
-        <div class="anchor-body">
-          Reciben los residuos de los barcos (aguas aceitosas, lodos de combustible, aguas sucias y basura), como obliga el convenio internacional MARPOL, y los envían a gestores autorizados.<br><br>
-          <strong>Su papel:</strong> son la entrada de residuos que llegan por mar. Parte de ellos, como los lodos de combustible, puede terminar en el horno de Argos.
-        </div>
-      </div>
-      <div class="anchor-stats-grid">
-        <div class="astat-box">
-          <span class="astat-lbl">Registros</span>
-          <span class="astat-val">2,352 reg</span>
-        </div>
-        <div class="astat-box">
-          <span class="astat-lbl">Período</span>
-          <span class="astat-val">2021–2024</span>
-        </div>
-        <div class="astat-box">
-          <span class="astat-lbl">Residuos Totales</span>
-          <span class="astat-val">36,519 ton</span>
-        </div>
-        <div class="astat-box">
-          <span class="astat-lbl">Res. MARPOL</span>
-          <span class="astat-val">816 reg</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 3. Ecopetrol, REFICAR -->
-    <div class="anchor-card">
-      <div>
-        <div class="anchor-header">
-          <div>
-            <div class="anchor-company-name">Ecopetrol, REFICAR</div>
-            <div class="anchor-sector">Refinación y petroquímica · Mamonal</div>
-          </div>
-          <span class="anchor-badge-tag">RFC</span>
-        </div>
-        <div class="anchor-body">
-          Genera cerca de 325.000 toneladas al año de azufre sólido, que se vende al sector agrícola. También produce lodos aceitosos, catalizadores usados y chatarra.<br><br>
-          <strong>Su papel:</strong> es la que más residuos genera por volumen. Sus lodos pueden ir al horno de Argos y su chatarra a la siderúrgica.
-        </div>
-      </div>
-      <div class="anchor-stats-grid">
-        <div class="astat-box">
-          <span class="astat-lbl">Registros</span>
-          <span class="astat-val">960 reg</span>
-        </div>
-        <div class="astat-box">
-          <span class="astat-lbl">Período</span>
-          <span class="astat-val">2022–2025</span>
-        </div>
-        <div class="astat-box">
-          <span class="astat-lbl">Residuos Totales</span>
-          <span class="astat-val">1.37 M ton</span>
-        </div>
-        <div class="astat-box">
-          <span class="astat-lbl">Reciclabilidad</span>
-          <span class="astat-val">94%</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- ═══ SECCIÓN ESTRATÉGICA: 4 PILARES ═══ -->
-  <div id="ejes"></div>
-  <h2 class="sec-title-main" style="margin-top: 60px;">¿Qué es Eco Industrial Park?</h2>
-  <p class="sec-intro-text">
-    El <strong>Eco Industrial Park Cartagena</strong> es un cluster industrial que reúne a las principales empresas de la Zona de Mamonal con un propósito claro: convertir la gestión de residuos industriales en una ventaja competitiva colectiva a través de 4 ejes estratégicos.
+    El <strong>Eco Industrial Park Cartagena</strong> es un cluster industrial que reúne a las principales empresas de la Zona de Mamonal con un propósito claro: convertir la gestión de residuos industriales en una ventaja competitiva colectiva. Su modelo opera en cuatro ejes:
   </p>
 
   <div class="unified-grid">
-    
     <!-- 1. ANALIZAR -->
     <div class="unified-card">
       <div>
@@ -749,15 +614,120 @@ footer {
           <h3 class="uc-title">4. Clasificar</h3>
         </div>
         <p class="uc-desc">
-          Mediante minería de datos, reconoce el nivel de peligrosidad de cada lote de residuo (de 1, muy bajo, a 5, muy alto) usando solo sus 12 mediciones de laboratorio para priorizar su manejo y asignación.
+          Mediante minería de datos, reconoce el nivel de peligrosidad de cada lote de residuo (de 1, muy bajo, a 5, muy alto) usando sus 12 mediciones de laboratorio para priorizar su manejo y asignación.
         </p>
       </div>
       <div class="uc-highlight-box">
         Peligrosidad (nivel 1 a 5) evaluada con 12 variables de laboratorio.
       </div>
     </div>
-
   </div>
+
+  <!-- MÉTRICAS DE IMPACTO -->
+  <div class="impact-metrics-grid">
+    <div class="impact-card">
+      <div class="impact-number">$85,581 M</div>
+      <div class="impact-desc">COP de ahorro potencial reduciendo solo un 15% de residuos críticos.</div>
+    </div>
+    <div class="impact-card" style="border-left-color: var(--moss);">
+      <div class="impact-number">2.11 M</div>
+      <div class="impact-desc">toneladas de residuos trazadas y analizadas en el cluster.</div>
+    </div>
+    <div class="impact-card" style="border-left-color: var(--forest);">
+      <div class="impact-number">91%</div>
+      <div class="impact-desc">de reciclabilidad promedio — la mayoría ya es un recurso, no un desecho.</div>
+    </div>
+  </div>
+
+  <!-- ═══ 2. SEGUNDA SECCIÓN: FICHAS DE EMPRESAS ANCLA (SIN TÍTULOS REPETIDOS) ═══ -->
+  <div id="empresas-ancla"></div>
+  <p class="sec-intro-text" style="font-size: 16.5px; font-weight: 600; color: var(--forest); margin-top: 20px;">
+    Tres empresas, tres tipos de residuos. Lo que una no puede usar, otra lo aprovecha. Haz clic en cada tarjeta para ver su base de datos completa.
+  </p>
+
+  <div class="anchors-grid">
+    <!-- Cementos Argos -->
+    <div class="anchor-card">
+      <div>
+        <div class="anchor-header">
+          <div>
+            <div class="anchor-company-name">Cementos Argos</div>
+            <div class="anchor-sector">Sector cementero · Zona Franca</div>
+          </div>
+          <span class="anchor-badge-tag">ARG</span>
+        </div>
+        <div class="anchor-body">
+          Su horno trabaja a más de 1.400 °C, una temperatura que permite usar residuos como combustible en lugar de carbón o petcoke. Además recibe escoria y arcillas que sustituyen parte del clínker del cemento.<br><br>
+          <strong>Su papel:</strong> recibe residuos de otras empresas y los convierte en energía y en materia prima.
+        </div>
+      </div>
+      <div class="anchor-stats-grid">
+        <div class="astat-box">
+          <span class="astat-lbl">Residuos totales</span>
+          <span class="astat-val">703 k/ton</span>
+        </div>
+        <div class="astat-box">
+          <span class="astat-lbl">CO₂ evitado</span>
+          <span class="astat-val">1,044 ton</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPRC y Contecar -->
+    <div class="anchor-card">
+      <div>
+        <div class="anchor-header">
+          <div>
+            <div class="anchor-company-name">SPRC y Contecar</div>
+            <div class="anchor-sector">Sector portuario · Terminal Manga y Mamonal</div>
+          </div>
+          <span class="anchor-badge-tag">SPC</span>
+        </div>
+        <div class="anchor-body">
+          Reciben los residuos de los barcos (aguas aceitosas, lodos de combustible, aguas sucias y basura), como obliga el convenio internacional MARPOL, y los envían a gestores autorizados.<br><br>
+          <strong>Su papel:</strong> son la entrada de residuos que llegan por mar. Parte de ellos, como los lodos de combustible, puede terminar en el horno de Argos.
+        </div>
+      </div>
+      <div class="anchor-stats-grid">
+        <div class="astat-box">
+          <span class="astat-lbl">Residuos totales</span>
+          <span class="astat-val">36,519 ton</span>
+        </div>
+        <div class="astat-box">
+          <span class="astat-lbl">Res. MARPOL</span>
+          <span class="astat-val">816 reg</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ecopetrol, REFICAR -->
+    <div class="anchor-card">
+      <div>
+        <div class="anchor-header">
+          <div>
+            <div class="anchor-company-name">Ecopetrol, REFICAR</div>
+            <div class="anchor-sector">Refinación y petroquímica · Mamonal</div>
+          </div>
+          <span class="anchor-badge-tag">RFC</span>
+        </div>
+        <div class="anchor-body">
+          Genera cerca de 325.000 toneladas al año de azufre sólido, que se vende al sector agrícola. También produce lodos aceitosos, catalizadores usados y chatarra.<br><br>
+          <strong>Su papel:</strong> es la que más residuos genera por volumen. Sus lodos pueden ir al horno de Argos y su chatarra a la siderúrgica.
+        </div>
+      </div>
+      <div class="anchor-stats-grid">
+        <div class="astat-box">
+          <span class="astat-lbl">Residuos totales</span>
+          <span class="astat-val">1.37 M ton</span>
+        </div>
+        <div class="astat-box">
+          <span class="astat-lbl">Reciclabilidad</span>
+          <span class="astat-val">94%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- ═══ FOOTER ═══ -->
