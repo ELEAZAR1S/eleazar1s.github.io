@@ -266,10 +266,10 @@ h1.hero-title em { font-style: italic; color: #48C9B0; }
   position: relative;
   z-index: 2;
   background: var(--cream);
-  padding: 80px 2.5rem;
-  max-width: 1280px;
-  margin: 0 auto;
-  border-top: 1px solid var(--border);
+  /* fondo a todo el ancho; el contenido se mantiene centrado en 1280px */
+  padding: 80px max(2.5rem, calc((100% - 1280px) / 2 + 2.5rem));
+  max-width: none;
+  margin: 0;
 }
 
 .sec-title-main {
