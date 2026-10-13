@@ -13,14 +13,14 @@
   --moss:        #0E5243;
   --turquoise:   #00796B;
   
-  /* Tarjeta más transparente y amplia */
-  --glass-bg:    rgba(255, 255, 255, 0.15);
-  --glass-border:rgba(255, 255, 255, 0.35);
-  --glass-shadow:0 20px 50px rgba(0, 0, 0, 0.3);
+  /* Tarjeta principal con fondo un poco más oscuro para máxima lecturabilidad */
+  --glass-bg:    rgba(5, 46, 35, 0.45);
+  --glass-border:rgba(255, 255, 255, 0.25);
+  --glass-shadow:0 20px 50px rgba(0, 0, 0, 0.45);
 
-  --text:        #0F1E19;
-  --text2:       #1D332B;
-  --text3:       #3A5248;
+  --text:        #FFFFFF;
+  --text2:       rgba(255, 255, 255, 0.92);
+  --text3:       rgba(255, 255, 255, 0.78);
   
   --rx:          24px;
   --rl:          16px;
@@ -36,7 +36,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ── NAVEGACIÓN TRANSPARENTE CON NUEVO LOGO ── */
+/* ── NAVEGACIÓN TRANSPARENTE CON LOGO MÁS GRANDE ── */
 nav {
   position: fixed; 
   top: 0; 
@@ -47,22 +47,25 @@ nav {
   display: flex; 
   align-items: center; 
   justify-content: space-between;
-  padding: 1.2rem 2.5rem; 
-  height: 70px;
+  padding: 1rem 2.5rem; 
+  height: 80px;
 }
 .nav-brand {
-  display: flex; align-items: center; gap: 12px;
+  display: flex; align-items: center; gap: 14px;
   text-decoration: none;
   font-weight: 800;
   color: #FFFFFF;
-  font-size: 16px;
+  font-size: 18px;
   text-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
 .nav-logo-img {
-  width: 36px; height: 36px; border-radius: 50%;
+  width: 48px; 
+  height: 48px; 
+  border-radius: 50%;
   object-fit: cover;
-  border: 2px solid rgba(255,255,255,0.8);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  border: 2px solid rgba(255,255,255,0.85);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  background: rgba(255,255,255,0.2);
 }
 .nav-links { display: flex; gap: 10px; list-style: none; }
 .nav-links a {
@@ -70,7 +73,7 @@ nav {
   font-size: 12px; font-weight: 700; letter-spacing: 0.05em;
   text-transform: uppercase; padding: 8px 16px; border-radius: 8px;
   transition: all 0.25s;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   text-shadow: 0 1px 4px rgba(0,0,0,0.6);
@@ -98,12 +101,12 @@ nav {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 60%, rgba(244, 249, 249, 1) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.1) 60%, rgba(244, 249, 249, 1) 100%);
   z-index: 1;
   pointer-events: none;
 }
 
-/* ── TARJETA FLOTANTE MÁS ANCHA Y TRANSPARENTE ── */
+/* ── TARJETAS DE DATOS CON FONDO MÁS OSCURO PARA LECTURA PERFECTA ── */
 .hero-wrapper {
   position: relative;
   z-index: 2;
@@ -111,17 +114,17 @@ nav {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 90px 2.5rem 40px;
+  padding: 100px 2.5rem 40px;
   max-width: 1450px;
   margin: 0 auto;
 }
 
 .hero-glass-card {
   width: 100%;
-  max-width: 680px; /* Tarjeta más ancha */
+  max-width: 680px;
   background: var(--glass-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
   border-radius: var(--rx);
   padding: 36px;
@@ -131,13 +134,12 @@ nav {
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em;
-  color: #fff; text-transform: uppercase;
+  color: #80E5D4; text-transform: uppercase;
   padding: 5px 14px; border-radius: 20px;
-  background: rgba(0, 121, 107, 0.65); 
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.4); 
+  border: 1px solid rgba(72, 201, 176, 0.4);
   margin-bottom: 14px;
   font-weight: 800;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 h1.hero-title {
@@ -152,7 +154,7 @@ h1.hero-title {
 h1.hero-title em { font-style: italic; color: #48C9B0; }
 
 .hero-desc {
-  font-size: 14px; color: rgba(255,255,255,0.9);
+  font-size: 14px; color: var(--text2);
   line-height: 1.6; margin-bottom: 24px;
   font-weight: 500;
   text-shadow: 0 1px 3px rgba(0,0,0,0.7);
@@ -163,7 +165,7 @@ h1.hero-title em { font-style: italic; color: #48C9B0; }
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: #FFFFFF;
+  color: #80E5D4;
   margin-bottom: 14px;
   font-weight: 800;
   text-shadow: 0 1px 3px rgba(0,0,0,0.7);
@@ -175,18 +177,19 @@ h1.hero-title em { font-style: italic; color: #48C9B0; }
   gap: 12px;
 }
 
+/* Cajas de cada empresa oscurecidas para resaltar el texto */
 .co-box-mini {
-  background: rgba(255, 255, 255, 0.22);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--rl);
   padding: 16px 18px;
   border-left: 4px solid #48C9B0;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
 .co-box-mini.spc { border-left-color: #00A896; }
-.co-box-mini.rfc { border-left-color: #117A65; }
+.co-box-mini.rfc { border-left-color: #2ECC71; }
 
 .co-mini-header {
   display: flex;
@@ -200,7 +203,7 @@ h1.hero-title em { font-style: italic; color: #48C9B0; }
   font-size: 16px;
   font-weight: 800;
   color: #FFFFFF;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
 
 .co-mini-tag {
@@ -208,15 +211,15 @@ h1.hero-title em { font-style: italic; color: #48C9B0; }
   font-size: 9px;
   padding: 2px 8px;
   border-radius: 4px;
-  background: rgba(0, 0, 0, 0.3);
-  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.5);
+  color: #48C9B0;
   font-weight: 800;
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(72, 201, 176, 0.4);
 }
 
 .co-mini-role {
   font-size: 12.5px;
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--text2);
   line-height: 1.45;
   margin-bottom: 10px;
   font-weight: 500;
@@ -228,8 +231,8 @@ h1.hero-title em { font-style: italic; color: #48C9B0; }
   gap: 16px;
   font-family: 'DM Mono', monospace;
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.8);
-  border-top: 1px dashed rgba(255, 255, 255, 0.3);
+  color: var(--text3);
+  border-top: 1px dashed rgba(255, 255, 255, 0.2);
   padding-top: 8px;
 }
 
@@ -259,7 +262,7 @@ footer {
 </head>
 <body>
 
-<!-- ═══ 1. NAVEGACIÓN CON NUEVO LOGO ═══ -->
+<!-- ═══ 1. NAVEGACIÓN CON LOGO MÁS GRANDE ═══ -->
 <nav>
   <a class="nav-brand" href="#">
     <img src="Gecko trepador con sombrero vueltiao.png" alt="Logo Gecko" class="nav-logo-img">
@@ -275,7 +278,7 @@ footer {
 <div class="hero-banner-bg" id="heroBg"></div>
 <div class="hero-overlay" id="heroOverlay"></div>
 
-<!-- ═══ 3. TARJETA FLOTANTE MÁS ANCHA Y TRANSPARENTE ═══ -->
+<!-- ═══ 3. TARJETA FLOTANTE CON DATOS MÁS OSCUROS ═══ -->
 <div class="hero-wrapper" id="empresas">
   <div class="hero-glass-card">
     <span class="hero-badge">Simbiosis Industrial</span>
