@@ -48,7 +48,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ── HERO BANNER CON IMAGEN LIMPIA Y POCO DIFUMINADO ── */
+/* ── HERO BANNER CON IMAGEN NÍDIDA Y DIFUMINADO INFERIOR ── */
 .hero-banner {
   position: relative;
   width: 100%;
@@ -74,29 +74,34 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  /* Overlay extremadamente sutil para que la imagen se vea totalmente viva y clara */
-  background: linear-gradient(180deg, rgba(11, 83, 69, 0.05) 0%, rgba(244, 249, 249, 0.2) 100%);
+  /* Degradado que difumina la parte inferior fundiéndose con el color de fondo (--cream) */
+  background: linear-gradient(180deg, rgba(11, 83, 69, 0.05) 50%, rgba(244, 249, 249, 0.6) 80%, rgba(244, 249, 249, 1) 100%);
   z-index: -1;
 }
 
-/* ── TYPOGRAPHY ── */
-h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; letter-spacing: -0.01em; }
-h1 em { font-style: italic; color: var(--turquoise); }
-h2.sec-h { font-size: clamp(26px, 3.5vw, 40px); font-weight: 700; color: var(--forest); margin-bottom: 12px; line-height: 1.15; }
-.mono { font-family: 'DM Mono', monospace; }
-
-/* ── NAV ── */
+/* ── BARRA DE NAVEGACIÓN FLOTANTE Y TRANSPARENTE ── */
 nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 2px solid var(--border);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 2.5rem; height: 62px;
+  position: absolute; 
+  top: 0; 
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: transparent; /* Sin barra blanca sólida */
+  backdrop-filter: blur(4px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+  padding: 0 2.5rem; 
+  height: 62px;
 }
 .nav-brand {
   display: flex; align-items: center; gap: 10px;
   text-decoration: none;
+}
+.nav-brand span {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
 }
 .nav-leaf {
   width: 28px; height: 28px; border-radius: 8px;
@@ -106,18 +111,25 @@ nav {
 @keyframes breathe { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
 .live-dot {
   width: 6px; height: 6px; border-radius: 50%;
-  background: var(--turquoise); animation: breathe 3s infinite;
+  background: var(--sun); animation: breathe 3s infinite;
   margin-left: 2px;
 }
 .nav-links { display: flex; gap: 2px; list-style: none; }
 .nav-links a {
-  color: var(--text3); text-decoration: none;
+  color: #FFFFFF; text-decoration: none;
   font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
   text-transform: uppercase; padding: 7px 13px; border-radius: 7px;
   transition: all 0.2s;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
 }
-.nav-links a:hover { color: var(--forest); background: var(--cream2); }
-.nav-links a.act { color: var(--turquoise); background: var(--cream2); font-weight: 700; }
+.nav-links a:hover { color: var(--sun); background: rgba(255, 255, 255, 0.15); }
+.nav-links a.act { color: var(--sun); background: rgba(255, 255, 255, 0.25); font-weight: 700; }
+
+/* ── TYPOGRAPHY ── */
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; letter-spacing: -0.01em; }
+h1 em { font-style: italic; color: var(--turquoise); }
+h2.sec-h { font-size: clamp(26px, 3.5vw, 40px); font-weight: 700; color: var(--forest); margin-bottom: 12px; line-height: 1.15; }
+.mono { font-family: 'DM Mono', monospace; }
 
 /* ── HERO CONTENT ── */
 .hero {
@@ -173,7 +185,6 @@ nav {
 .hv-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
 .hv-icon.g { background: var(--cream2); color: var(--turquoise); }
 .hv-icon.s { background: #FEF9E7; color: var(--sun); }
-
 .hv-label { font-size: 12px; font-weight: 600; color: var(--forest); margin-bottom: 2px; }
 .hv-val { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text3); }
 
@@ -223,25 +234,25 @@ footer {
 </head>
 <body>
 
-<!-- ═══ 1. HERO BANNER: SOLO IMAGEN LIMPIA Y NÍDIDA ═══ -->
+<!-- ═══ 1. BARRA DE NAVEGACIÓN FLOTANTE Y TRANSPARENTE ═══ -->
+<nav>
+  <a class="nav-brand" href="#hero">
+    <span class="nav-leaf">🌱</span>
+    <span>Eco Industrial Park</span>
+    <span class="live-dot"></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#hero">INICIO</a></li>
+    <li><a href="#DATOS">DATOS</a></li>
+    <li><a href="#MINERIA DE DATOS">MINERIA DE DATOS</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ 2. HERO BANNER: SOLO IMAGEN LIMPIA Y DIFUMINADO INFERIOR ═══ -->
 <div class="hero-banner" id="heroBanner">
   <div class="hero-banner-bg" id="heroBg"></div>
   <div class="hero-banner-overlay"></div>
 </div>
-
-<!-- ═══ 2. BARRA DE NAVEGACIÓN FLOTANTE ═══ -->
-<nav>
-  <a class="nav-brand" href="#hero">
-    <span class="nav-leaf">🌱</span>
-    <span style="font-weight:700; color:var(--forest); font-size:14px;">Eco Industrial Park</span>
-    <span class="live-dot"></span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#hero">Inicio</a></li>
-    <li><a href="#empresas">Empresas</a></li>
-    <li><a href="#mercado">Mercado</a></li>
-  </ul>
-</nav>
 
 <!-- ═══ 3. SECCIÓN HERO PRINCIPAL ═══ -->
 <section class="hero" id="hero">
