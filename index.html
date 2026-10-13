@@ -9,21 +9,18 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 
 :root{
-  /* Palette & Transparencies */
   --cream:       #F4F9F9;
   --white:       #FFFFFF;
   --forest:      #0B5345;
   --moss:        #117A65;
   --turquoise:   #00A896;
   --sage:        #48C9B0;
-  --sun:         #F1C40F;
+  
+  /* Tarjetas translúcidas (Glassmorphism) */
+  --glass-bg:    rgba(255, 255, 255, 0.82);
+  --glass-border:rgba(255, 255, 255, 0.95);
+  --glass-shadow:0 12px 32px rgba(11, 83, 69, 0.15);
 
-  /* Glassmorphism Cards */
-  --glass-bg:    rgba(255, 255, 255, 0.78);
-  --glass-border:rgba(255, 255, 255, 0.9);
-  --glass-shadow:0 12px 32px rgba(11, 83, 69, 0.12);
-
-  /* Text Colors */
   --text:        #1B2631;
   --text2:       #2C3E50;
   --text3:       #5D6D7E;
@@ -44,14 +41,14 @@ body {
   overflow-x: hidden;
 }
 
-/* ── NAVEGACIÓN TRANSPARENTE ── */
+/* ── NAVEGACIÓN FLOTANTE TRANSPARENTE ── */
 nav {
   position: fixed; 
   top: 0; 
   left: 0;
   width: 100%;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   display: flex; 
@@ -66,13 +63,11 @@ nav {
   font-weight: 700;
   color: var(--forest);
   font-size: 15px;
-  text-shadow: 0 1px 2px rgba(255,255,255,0.8);
 }
 .nav-leaf {
   width: 28px; height: 28px; border-radius: 8px;
   background: var(--turquoise); display: flex; align-items: center; justify-content: center;
   font-size: 14px; color: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 .nav-links { display: flex; gap: 8px; list-style: none; }
 .nav-links a {
@@ -80,18 +75,18 @@ nav {
   font-size: 12px; font-weight: 700; letter-spacing: 0.04em;
   text-transform: uppercase; padding: 6px 12px; border-radius: 6px;
   transition: all 0.2s;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.6);
 }
-.nav-links a:hover { color: var(--forest); background: rgba(255, 255, 255, 0.85); }
+.nav-links a:hover { color: var(--forest); background: rgba(255, 255, 255, 0.95); }
 
-/* ── IMAGEN DE FONDO COMPLETA (HERO BANNER) ── */
+/* ── IMAGEN DE FONDO COMPLETA (COVER) ── */
 .hero-banner-bg {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background: url('Panorama del puerto sostenible de Cartagena.png') center/contain no-repeat #81d4fa;
+  background: url('Panorama del puerto sostenible de Cartagena.png') center center / cover no-repeat;
   z-index: 1;
   will-change: opacity;
   transition: opacity 0.1s linear;
@@ -103,12 +98,12 @@ nav {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(244, 249, 249, 0.4) 70%, rgba(244, 249, 249, 1) 100%);
+  background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(244, 249, 249, 0.35) 75%, rgba(244, 249, 249, 1) 100%);
   z-index: 1;
   pointer-events: none;
 }
 
-/* ── SECCIÓN SUPERPUESTA CON TRANSPARENCIA Y SOMBRA ── */
+/* ── CONTENIDO SOBRE LA IMAGEN ── */
 .hero-wrapper {
   position: relative;
   z-index: 2;
@@ -138,7 +133,7 @@ nav {
   font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em;
   color: var(--forest); text-transform: uppercase;
   padding: 4px 12px; border-radius: 20px;
-  background: rgba(255, 255, 255, 0.85); border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.9); border: 1px solid var(--border);
   margin-bottom: 14px;
   font-weight: 600;
 }
@@ -158,7 +153,6 @@ h1.hero-title em { font-style: italic; color: var(--turquoise); }
   line-height: 1.6; margin-bottom: 22px;
 }
 
-/* ── TARJETAS RESUMIDAS TRANSPARENTES CON SOMBRA ── */
 .sec-subtitle {
   font-family: 'DM Mono', monospace;
   font-size: 11px;
@@ -176,12 +170,12 @@ h1.hero-title em { font-style: italic; color: var(--turquoise); }
 }
 
 .co-box-mini {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.95);
   border-radius: var(--rl);
   padding: 14px 16px;
   border-left: 4px solid var(--turquoise);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 .co-box-mini.spc { border-left-color: var(--moss); }
@@ -232,17 +226,6 @@ h1.hero-title em { font-style: italic; color: var(--turquoise); }
   color: var(--forest);
 }
 
-/* ── CONTENIDO ADICIONAL (AL BAJAR) ── */
-.extra-content {
-  position: relative;
-  z-index: 2;
-  background: var(--cream);
-  padding: 60px 2.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  border-top: 1px solid var(--border);
-}
-
 footer { 
   position: relative;
   z-index: 2;
@@ -263,7 +246,6 @@ footer {
 </head>
 <body>
 
-<!-- ═══ 1. NAVEGACIÓN ═══ -->
 <nav>
   <a class="nav-brand" href="#">
     <span class="nav-leaf">🌱</span>
@@ -275,11 +257,9 @@ footer {
   </ul>
 </nav>
 
-<!-- ═══ 2. IMAGEN DE FONDO COMPLETA CON DIFUMINADO ═══ -->
 <div class="hero-banner-bg" id="heroBg"></div>
 <div class="hero-overlay" id="heroOverlay"></div>
 
-<!-- ═══ 3. CONTENIDO PRINCIPAL FLOTANTE SOBRE LA IMAGEN ═══ -->
 <div class="hero-wrapper" id="empresas">
   <div class="hero-glass-card">
     <span class="hero-badge">Simbiosis Industrial</span>
@@ -291,8 +271,6 @@ footer {
     <div class="sec-subtitle">Empresas Ancla del Cluster</div>
 
     <div class="company-summary-grid">
-      
-      <!-- Cementos Argos -->
       <div class="co-box-mini">
         <div class="co-mini-header">
           <div class="co-mini-name">Cementos Argos</div>
@@ -307,7 +285,6 @@ footer {
         </div>
       </div>
 
-      <!-- SPRC & Contecar -->
       <div class="co-box-mini spc">
         <div class="co-mini-header">
           <div class="co-mini-name">SPRC & Contecar</div>
@@ -322,7 +299,6 @@ footer {
         </div>
       </div>
 
-      <!-- Ecopetrol - REFICAR -->
       <div class="co-box-mini rfc">
         <div class="co-mini-header">
           <div class="co-mini-name">Ecopetrol — REFICAR</div>
@@ -336,17 +312,14 @@ footer {
           <span>Reciclabilidad: <strong>94%</strong></span>
         </div>
       </div>
-
     </div>
   </div>
 </div>
 
-<!-- ═══ 4. FOOTER ═══ -->
 <footer>
   Eco Industrial Park &copy; 2026 — Cartagena de Indias
 </footer>
 
-<!-- ═══ SCRIPT DE DESVANECIMIENTO AL SCROLL ═══ -->
 <script>
   window.addEventListener('scroll', function() {
     const heroBg = document.getElementById('heroBg');
